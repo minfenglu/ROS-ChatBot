@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import rospy
 import aiml
 import os
@@ -21,7 +23,7 @@ def load_aiml(xml_file):
 def callback(data):
     input = data.data
     response = mybot.respond(input)
-    rospy.loginfo("I heard:: %s", data,data)
+    rospy.loginfo("I heard:: %s", data.data)
     rospy.loginfo("I spoke:: %s", response)
     response_publisher.publish(response)
 
